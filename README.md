@@ -12,3 +12,10 @@ project open project_name -e=webstorm
 project list
 
 ```
+
+## depedencies
+1. chalk
+2. Inquirer.js
+3. commanderjs or yargs
+4. figlet
+5. shelljs
