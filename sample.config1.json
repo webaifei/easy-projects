@@ -1,0 +1,8 @@
+{
+  "projects": [
+    [ "Project Name",  "Folder",  "path"],
+    [ "给你花-首页", "app-baihuabao-index",  "/Users/u51/projects/company/loan-line/app-baihuabao-index" ],
+    [ "北斗-贷超", "app-enniu-market",  "/Users/u51/projects/company/loan-line/app-enniu-market" ],
+    [ "给你花-首页", "app-baihuabao-index",  "/Users/u51/projects/company/loan-line/app-baihuabao-index" ]
+  ]
+}

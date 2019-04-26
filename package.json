@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/webaifei/easy-projects/issues"
   },
-  "homepage": "https://github.com/webaifei/easy-projects#readme"
+  "homepage": "https://github.com/webaifei/easy-projects#readme",
+  "dependencies": {
+    "blessed": "^0.1.81"
+  }
 }
