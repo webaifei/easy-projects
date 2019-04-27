@@ -6,41 +6,9 @@ const screen = blessed.screen({
     fullUnicode: true
 });
 
-screen.title = "my window title";
+screen.title = "FE ATOM";
 
-const list = blessed.list({
-    // parent: screen,
-    label: "Project Manage",
-    tags: true,
-    top: 0,
-    right: 0,
-    width: "100%",
-    height: '50%',
-    keys: true,
-    vi: true,
-    mouse: true,
-    border: 'line',
-    scrollbar: {
-        ch: ' ',
-        track: {
-            bg: 'cyan'
-        },
-        style: {
-            inverse: true
-        }
-    },
-    style: {
-        item: {
-            hover: {
-                bg: 'blue'
-            }
-        },
-        selected: {
-            bg: 'blue',
-            bold: true
-        }
-    },
-});
+
 const listTable = blessed.listtable({
     label: "Project Manage",
     parent: screen,
@@ -75,32 +43,14 @@ const listTable = blessed.listtable({
     },
     data: projectsList.projects
 });
-list.setItems(projectsList.projects.map(item=>Object.values(item).join('')));
-list.on('select', function (el, selected) {
-    if (list._.rendering) return;
-    console.log(el);
-});
-// list.focus();
-// list.enterSelected(0);
 
 listTable.on('select', function (el, selected) {
     if (listTable._.rendering) return;
-    execSync(`code ${projectsList.projects[selected][2]}`)
+    console.log(selected);
+    // execSync(`code ${projectsList.projects[selected][2]}`)
 });
-listTable.enterSelected(0);
-listTable.focus();
-// If our box is clicked, change the content.
-// box.on('click', function(data) {
-//   box.setContent(`{center}Some different {red-fg}content: ${data.x}, ${data.y}{/red-fg}.{/center}`);
-//   screen.render();
-// });
-//
-// box.key('enter', function(ch, key) {
-//   box.setContent('{right}Even different {black-fg}content{/black-fg}.{/right}\n');
-//   box.setLine(1, 'bar');
-//   box.insertLine(1, 'foo');
-//   screen.render();
-// });
+
+
 
 
 screen.key(['escape', 'q', 'C-c'], function (ch, key) {
@@ -108,7 +58,7 @@ screen.key(['escape', 'q', 'C-c'], function (ch, key) {
 });
 
 
-// screen.append(list);
 screen.append(listTable);
-
+listTable.focus();
+// listTable.select(0);
 screen.render();
